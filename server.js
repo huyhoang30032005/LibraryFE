@@ -5,10 +5,10 @@ const app = express();
 
 const PORT = process.env.PORT || 5500;
 
-// Cho phép truy cập các file HTML, CSS, JS
-app.use(express.static(__dirname));
+app.use(express.static(__dirname, {
+    index: false
+}));
 
-// Trang mặc định
 app.get("/", (req, res) => {
     res.sendFile(
         path.join(__dirname, "login.html")
