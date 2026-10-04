@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Người dùng - Library Management
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style_users.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+
+    <!-- ==================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+
+        <!-- Logo -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                L
+            </div>
+
+            <div>
+
+                <h2>
+                    Library
+                </h2>
+
+                <span>
+                    Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="menu">
+
+            <p class="menu-title">
+                TỔNG QUAN
+            </p>
+
+
+            <a
+                class="menu-item"
+                href="index.html"
+            >
+
+                <span class="menu-icon">
+                    ▦
+                </span>
+
+                Dashboard
+
+            </a>
+
+
+            <a
+                class="menu-item"
+                href="books.html"
+            >
+
+                <span class="menu-icon">
+                    ▤
+                </span>
+
+                Sách
+
+            </a>
+
+
+            <a
+                class="menu-item"
+                href="borrowers.html"
+            >
+
+                <span class="menu-icon">
+                    ♙
+                </span>
+
+                Người mượn
+
+            </a>
+
+
+            <a
+                class="menu-item"
+                href="borrowings.html"
+            >
+
+                <span class="menu-icon">
+                    ▣
+                </span>
+
+                Phiếu mượn / trả
+
+            </a>
+
+
+
+            <a
+                class="menu-item active"
+                href="users.html"
+            >
+
+                <span class="menu-icon">
+                    ♙
+                </span>
+
+                Người dùng
+
+            </a>
+
+
+
+        </nav>
+
+
+        <!-- Sidebar bottom -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- Current user -->
+
+            <div class="user-card">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div class="user-info">
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Quản trị viên
+                    </span>
+
+                </div>
+
+                <span class="more">
+                    ⋮
+                </span>
+
+            </div>
+
+
+            <!-- Logout -->
+
+            <a
+                class="logout"
+                href="#"
+            >
+                ↪ Đăng xuất
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main class="main">
+
+
+        <!-- ==================================================
+             HEADER
+        ================================================== -->
+
+        <header class="header">
+
+
+            <!-- Page heading -->
+
+            <div>
+
+                <h1>
+                    Người dùng
+                </h1>
+
+                <p>
+                    Hệ thống quản lý thư viện
+                </p>
+
+            </div>
+
+
+            <!-- Header right -->
+
+            <div class="header-right">
+
+
+           
+
+
+                <!-- Notification -->
+
+                <button
+                    type="button"
+                    class="notification"
+                >
+                    ♧
+                </button>
+
+
+                <!-- Profile -->
+
+                <div class="profile">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Quản trị viên
+                        </span>
+
+                    </div>
+
+                    <span>
+                        ⌄
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==================================================
+             CONTENT
+        ================================================== -->
+
+        <section class="content">
+
+
+            <!-- ==================================================
+                 PAGE TITLE
+            ================================================== -->
+
+            <div class="page-title">
+
+                <h2>
+                    Người dùng hệ thống
+                </h2>
+
+                <p>
+                    Quản lý tài khoản Admin và Thủ thư
+                </p>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 TOOLBAR
+            ================================================== -->
+
+            <div class="toolbar">
+
+
+                <div class="filters">
+
+
+                    <!-- Search -->
+
+                    <div class="filter-search">
+
+                        <span class="filter-search-icon">
+                            ⌕
+                        </span>
+
+                        <input
+                            type="text"
+                            id="userSearch"
+                            class="input"
+                            placeholder="Tìm tên, tên đăng nhập, email hoặc số điện thoại..."
+                        >
+
+                    </div>
+
+
+                    <!-- Role filter -->
+
+                    <select
+                        id="roleFilter"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Tất cả vai trò
+                        </option>
+
+                        <option value="admin">
+                            Admin
+                        </option>
+
+                        <option value="librarian">
+                            Thủ thư
+                        </option>
+
+                    </select>
+
+
+                    <!-- Status filter -->
+
+                    <select
+                        id="statusFilter"
+                        class="select"
+                    >
+
+                        <option value="">
+                            Tất cả trạng thái
+                        </option>
+
+                        <option value="active">
+                            Hoạt động
+                        </option>
+
+                        <option value="inactive">
+                            Không hoạt động
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Add user -->
+
+                <button
+                    type="button"
+                    class="btn"
+                    id="addUserBtn"
+                >
+                    + Thêm người dùng
+                </button>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 USERS TABLE
+            ================================================== -->
+
+            <div class="panel users-panel">
+
+                <div class="table-wrapper users-table-wrapper">
+
+                    <table class="users-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    NGƯỜI DÙNG
+                                </th>
+
+                                <th>
+                                    EMAIL
+                                </th>
+
+                                <th>
+                                    SỐ ĐIỆN THOẠI
+                                </th>
+
+                                <th>
+                                    VAI TRÒ
+                                </th>
+
+                                <th>
+                                    TRẠNG THÁI
+                                </th>
+
+                                <th>
+                                    THAO TÁC
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="usersTableBody">
+
+                            <!-- JavaScript sẽ tạo dữ liệu -->
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADD USER MODAL
+========================================================= -->
+
+<div
+    id="addUserModal"
+    class="modal"
+>
+
+    <div class="modal-content user-modal">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Thêm người dùng
+                </h2>
+
+                <p>
+                    Tạo tài khoản Admin hoặc Thủ thư
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeAddUserModal"
+                class="close-modal-btn"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+
+        <!-- Body -->
+
+        <div class="modal-body">
+
+            <form id="addUserForm">
+
+
+                <!-- Account information -->
+
+                <div class="form-section">
+
+                    <h3>
+                        Thông tin tài khoản
+                    </h3>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Username -->
+
+                        <div class="form-group">
+
+                            <label for="addUsername">
+
+                                Tên đăng nhập
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="addUsername"
+                                placeholder="Nhập tên đăng nhập"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="addEmail">
+
+                                Email
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="email"
+                                id="addEmail"
+                                placeholder="Nhập email"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Password -->
+
+                        <div class="form-group">
+
+                            <label for="addPassword">
+
+                                Mật khẩu
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="password"
+                                id="addPassword"
+                                placeholder="Nhập mật khẩu"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Confirm password -->
+
+                        <div class="form-group">
+
+                            <label for="addConfirmPassword">
+
+                                Xác nhận mật khẩu
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="password"
+                                id="addConfirmPassword"
+                                placeholder="Nhập lại mật khẩu"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Personal information -->
+
+                <div class="form-section">
+
+                    <h3>
+                        Thông tin người dùng
+                    </h3>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Full name -->
+
+                        <div class="form-group">
+
+                            <label for="addFullName">
+
+                                Tên người dùng
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="addFullName"
+                                placeholder="Nhập họ và tên"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="addPhone">
+                                Số điện thoại
+                            </label>
+
+                            <input
+                                type="text"
+                                id="addPhone"
+                                placeholder="Nhập số điện thoại"
+                            >
+
+                        </div>
+
+
+
+                        <!-- Role -->
+
+                        <div class="form-group">
+
+                            <label for="addRole">
+
+                                Vai trò
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <select
+                                id="addRole"
+                                required
+                            >
+
+                                <option value="">
+                                    Chọn vai trò
+                                </option>
+
+                                <option value="admin">
+                                    Admin
+                                </option>
+
+                                <option value="librarian">
+                                    Thủ thư
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Status -->
+
+                        <div class="form-group">
+
+                            <label for="addStatus">
+                                Trạng thái
+                            </label>
+
+                            <select id="addStatus">
+
+                                <option value="active">
+                                    Hoạt động
+                                </option>
+
+                                <option value="inactive">
+                                    Không hoạt động
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div
+                    id="addUserFormMessage"
+                    class="form-message"
+                ></div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Footer -->
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="cancelAddUserBtn"
+                class="cancel-btn"
+            >
+                Hủy
+            </button>
+
+            <button
+                type="submit"
+                form="addUserForm"
+                id="saveAddUserBtn"
+                class="save-btn"
+            >
+                Thêm người dùng
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     USER DETAIL MODAL
+========================================================= -->
+
+<div
+    id="userDetailModal"
+    class="modal"
+>
+
+    <div class="modal-content user-modal">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Chi tiết người dùng
+                </h2>
+
+                <p>
+                    Thông tin tài khoản và người dùng
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeUserDetailModal"
+                class="close-modal-btn"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+
+        <!-- Body -->
+
+        <div class="modal-body">
+
+
+            <!-- User information -->
+
+            <div class="detail-section">
+
+                <h3>
+                    Thông tin người dùng
+                </h3>
+
+
+                <div class="detail-grid">
+
+
+                    <!-- Full name -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Tên người dùng
+                        </span>
+
+                        <span
+                            id="detailUserName"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Email -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Email
+                        </span>
+
+                        <span
+                            id="detailUserEmail"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Phone -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Số điện thoại
+                        </span>
+
+                        <span
+                            id="detailUserPhone"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Created date -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Ngày tạo
+                        </span>
+
+                        <span
+                            id="detailUserCreatedAt"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Account information -->
+
+            <div class="detail-section">
+
+                <h3>
+                    Thông tin tài khoản
+                </h3>
+
+
+                <div class="detail-grid">
+
+
+                    <!-- Username -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Tên đăng nhập
+                        </span>
+
+                        <span
+                            id="detailUsername"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Password -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Mật khẩu
+                        </span>
+
+                        <span
+                            id="detailPassword"
+                            class="detail-value password-hidden"
+                        >
+                            ••••••••••
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Role -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Vai trò
+                        </span>
+
+                        <span
+                            id="detailUserRole"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Status -->
+
+                    <div class="detail-item">
+
+                        <span class="detail-label">
+                            Trạng thái
+                        </span>
+
+                        <span
+                            id="detailUserStatus"
+                            class="detail-value"
+                        >
+                            -
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Change password -->
+
+                <div class="detail-password-action">
+
+                    <button
+                        type="button"
+                        id="changePasswordBtn"
+                        class="change-password-btn"
+                    >
+                        Đổi mật khẩu
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer -->
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="closeUserDetailBtn"
+                class="cancel-btn"
+            >
+                Đóng
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     EDIT USER MODAL
+========================================================= -->
+
+<div
+    id="editUserModal"
+    class="modal"
+>
+
+    <div class="modal-content user-modal">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Chỉnh sửa người dùng
+                </h2>
+
+                <p>
+                    Cập nhật thông tin tài khoản
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeEditUserModal"
+                class="close-modal-btn"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+
+        <!-- Body -->
+
+        <div class="modal-body">
+
+            <form id="editUserForm">
+
+
+                <input
+                    type="hidden"
+                    id="editUserId"
+                >
+
+
+
+                <!-- User information -->
+
+                <div class="form-section">
+
+                    <h3>
+                        Thông tin người dùng
+                    </h3>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Full name -->
+
+                        <div class="form-group">
+
+                            <label for="editFullName">
+
+                                Tên người dùng
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editFullName"
+                                placeholder="Nhập họ và tên"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="editEmail">
+
+                                Email
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editEmail"
+                                placeholder="Nhập email"
+                                required
+                            >
+
+                        </div>
+
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="editPhone">
+                                Số điện thoại
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editPhone"
+                                placeholder="Nhập số điện thoại"
+                            >
+
+                        </div>
+
+
+
+                        <!-- Username -->
+
+                        <div class="form-group">
+
+                            <label for="editUsername">
+
+                                Tên đăng nhập
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editUsername"
+                                placeholder="Nhập tên đăng nhập"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Role and status -->
+
+                <div class="form-section">
+
+                    <h3>
+                        Phân quyền
+                    </h3>
+
+
+                    <div class="form-grid">
+
+
+                        <!-- Role -->
+
+                        <div class="form-group">
+
+                            <label for="editRole">
+
+                                Vai trò
+
+                                <span>
+                                    *
+                                </span>
+
+                            </label>
+
+                            <select
+                                id="editRole"
+                                required
+                            >
+
+                                <option value="admin">
+                                    Admin
+                                </option>
+
+                                <option value="librarian">
+                                    Thủ thư
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Status -->
+
+                        <div class="form-group">
+
+                            <label for="editStatus">
+                                Trạng thái
+                            </label>
+
+                            <select id="editStatus">
+
+                                <option value="active">
+                                    Hoạt động
+                                </option>
+
+                                <option value="inactive">
+                                    Không hoạt động
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div
+                    id="editUserFormMessage"
+                    class="form-message"
+                ></div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Footer -->
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="cancelEditUserBtn"
+                class="cancel-btn"
+            >
+                Hủy
+            </button>
+
+            <button
+                type="submit"
+                form="editUserForm"
+                id="saveEditUserBtn"
+                class="save-btn"
+            >
+                Lưu thay đổi
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     CHANGE PASSWORD MODAL
+========================================================= -->
+
+<div
+    id="changePasswordModal"
+    class="modal"
+>
+
+    <div class="modal-content password-modal">
+
+
+        <!-- Header -->
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Đổi mật khẩu
+                </h2>
+
+                <p>
+                    Thiết lập mật khẩu mới cho tài khoản
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="closeChangePasswordModal"
+                class="close-modal-btn"
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+
+        <!-- Body -->
+
+        <div class="modal-body">
+
+            <form id="changePasswordForm">
+
+
+                <input
+                    type="hidden"
+                    id="changePasswordUserId"
+                >
+
+
+                <!-- New password -->
+
+                <div class="form-group">
+
+                    <label for="newPassword">
+
+                        Mật khẩu mới
+
+                        <span>
+                            *
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="password"
+                        id="newPassword"
+                        placeholder="Nhập mật khẩu mới"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Confirm password -->
+
+                <div class="form-group">
+
+                    <label for="confirmNewPassword">
+
+                        Xác nhận mật khẩu
+
+                        <span>
+                            *
+                        </span>
+
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmNewPassword"
+                        placeholder="Nhập lại mật khẩu mới"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div
+                    id="changePasswordMessage"
+                    class="form-message"
+                ></div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Footer -->
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="cancelChangePasswordBtn"
+                class="cancel-btn"
+            >
+                Hủy
+            </button>
+
+            <button
+                type="submit"
+                form="changePasswordForm"
+                id="saveChangePasswordBtn"
+                class="save-btn"
+            >
+                Đổi mật khẩu
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script_users.js"></script>
+<script src="script_logout.js"></script>
+</body>
+
+</html>

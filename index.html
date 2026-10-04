@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Library Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ==================== SIDEBAR ==================== -->
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="logo">
+                <div class="logo-icon">L</div>
+
+                <div>
+                    <h2>Library</h2>
+                    <span>Management</span>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <nav class="menu">
+
+                <p class="menu-title">TỔNG QUAN</p>
+
+                <a class="menu-item active" href="index.html">
+                    <span class="menu-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a class="menu-item" href="books.html">
+                    <span class="menu-icon">▤</span>
+                    Sách
+                </a>
+
+                <a class="menu-item" href="borrowers.html">
+                    <span class="menu-icon">♙</span>
+                    Người mượn
+                </a>
+
+                <a class="menu-item" href="borrowings.html">
+                    <span class="menu-icon">▣</span>
+                    Phiếu mượn / trả
+                </a>
+
+
+                <a class="menu-item" href="users.html">
+                    <span class="menu-icon">♙</span>
+                    Người dùng
+                </a>
+
+            </nav>
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <div class="user-card">
+
+                    <div class="avatar">A</div>
+
+                    <div class="user-info">
+                        <strong>Admin</strong>
+                        <span>Quản trị viên</span>
+                    </div>
+
+                    <span class="more">⋮</span>
+
+                </div>
+
+                <a class="logout" href="#" id="logoutButton">
+                    ↪ Đăng xuất
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================== MAIN CONTENT ==================== -->
+        <main class="main">
+
+            <!-- ==================== HEADER ==================== -->
+            <header class="header">
+
+                <!-- Header title -->
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Hệ thống quản lý thư viện</p>
+                </div>
+
+                <!-- Header right -->
+                <div class="header-right">
+
+               
+
+                    <!-- Notification -->
+                    <button class="notification">
+                        ♧
+                    </button>
+
+                    <!-- Profile -->
+                    <div class="profile">
+
+                        <div class="avatar">A</div>
+
+                        <div>
+                            <strong>Admin</strong>
+                            <span>Quản trị viên</span>
+                        </div>
+
+                        <span>⌄</span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================== CONTENT ==================== -->
+            <section class="content">
+
+
+                <!-- ==================== STATISTICS CARDS ==================== -->
+                <div class="stats-grid">
+
+                    <!-- Total books -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-title">
+                                Tổng số sách
+                            </span>
+
+                            <div class="stat-icon">
+                                ▤
+                            </div>
+                        </div>
+
+                        <div class="stat-number">
+                            <span id="totalBooks">0</span>
+                        </div>
+
+                        <div class="stat-footer">
+                            <span class="increase">
+                                <span id="newBooksThisMonth">+0</span>
+                            </span>
+                            sách mới tháng này
+                        </div>
+
+                    </div>
+
+
+                    <!-- Available books -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-title">
+                                Sách có sẵn
+                            </span>
+
+                            <div class="stat-icon">
+                                ✓
+                            </div>
+                        </div>
+
+                        <div class="stat-number">
+                            <span id="availableBooks">0</span>
+                        </div>
+
+                        <div class="stat-footer">
+                            <span class="increase">
+                                <span id="availablePercent">0%</span>
+                            </span>
+                            tổng số sách
+                        </div>
+
+                    </div>
+
+
+                    <!-- Borrowed books -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-title">
+                                Đang được mượn
+                            </span>
+
+                            <div class="stat-icon">
+                                ↗
+                            </div>
+                        </div>
+
+                        <div class="stat-number">
+                            <span id="borrowedBooks">0</span>
+                        </div>
+
+                        <div class="stat-footer">
+                            <span class="increase">
+                                <span id="borrowedPercent">0%</span>
+                            </span>
+                            so với tháng trước
+                        </div>
+
+                    </div>
+
+
+                    <!-- Overdue books -->
+                    <div class="stat-card">
+
+                        <div class="stat-top">
+                            <span class="stat-title">
+                                Sách quá hạn
+                            </span>
+
+                            <div class="stat-icon">
+                                !
+                            </div>
+                        </div>
+
+                        <div class="stat-number">
+                            <span id="overdueBooks">0</span>
+                        </div>
+
+                        <div class="stat-footer">
+                            <span class="danger">
+                                Cần xử lý
+                            </span>
+                            ngay hôm nay
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== MIDDLE SECTION ==================== -->
+                <div class="middle-grid">
+
+
+                    <!-- ==================== BORROWING CHART ==================== -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Lượt mượn sách</h2>
+                                <p>
+                                    Thống kê số lượt mượn theo tháng
+                                </p>
+                            </div>
+
+                            <select class="select" id="chartPeriod">
+                                <option value="6">6 tháng gần nhất</option>
+                                 <option value="12">12 tháng gần nhất</option>
+                            </select>
+
+                        </div>
+
+
+                        <!-- Chart -->
+                        <div class="chart">
+
+                            <!-- Y Axis -->
+                            <div class="y-axis">
+                                <span>100</span>
+                                <span>60</span>
+                                <span>30</span>
+                                <span>%</span>
+                            </div>
+
+
+                            <!-- Chart area -->
+                            <div class="chart-area">
+
+                                <!-- Grid lines -->
+                                <div class="grid-line l1"></div>
+                                <div class="grid-line l2"></div>
+                                <div class="grid-line l3"></div>
+
+
+                                <!-- Bars -->
+                                <div class="bars" id="borrowingChart">
+    <div class="bar-column">
+        <div class="bar" style="height: 0%"></div>
+        <span>Đang tải</span>
+    </div>
+</div>
+</div>
+
+                    </div>
+
+
+                    <!-- ==================== OVERDUE BOOKS ==================== -->
+                    <div class="panel">
+
+                        <div class="panel-header">
+
+                            <div>
+                                <h2>Sách quá hạn</h2>
+                                <p>Cần được xử lý</p>
+                            </div>
+
+                            <a href="borrowings.html">
+                                Xem tất cả
+                            </a>
+
+                        </div>
+
+
+                        <div class="overdue-list" id="overdueList">
+    <div class="overdue-item">
+        <div class="book-icon">▤</div>
+        <div class="overdue-info">
+            <strong>Đang tải dữ liệu...</strong>
+            <span>Vui lòng chờ</span>
+        </div>
+    </div>
+</div>
+</div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==================== RECENT BORROWINGS ==================== -->
+                <div class="panel recent-panel">
+
+                    <div class="panel-header">
+
+                        <div>
+                            <h2>Phiếu mượn gần đây</h2>
+                            <p>
+                                Các giao dịch mới nhất
+                            </p>
+                        </div>
+
+                        <a href="borrowings.html">
+                            Xem tất cả
+                        </a>
+
+                    </div>
+
+
+                    <!-- Table -->
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>MÃ PHIẾU</th>
+                                    <th>NGƯỜI MƯỢN</th>
+                                    <th>SÁCH</th>
+                                    <th>NGÀY MƯỢN</th>
+                                    <th>HẠN TRẢ</th>
+                                    <th>TRẠNG THÁI</th>
+                                </tr>
+                            </thead>
+
+
+                            <tbody id="recentBorrowings">
+    <tr>
+        <td colspan="6" style="text-align: center;">Đang tải dữ liệu...</td>
+    </tr>
+</tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+<script src="script.js"></script>
+<script src="script_logout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng nhập - Quản lý thư viện</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_login.css">
+</head>
+
+
+<body class="login-page">
+
+    <main class="login-container">
+
+        <!-- ============================= -->
+        <!-- KHU VỰC GIỚI THIỆU -->
+        <!-- ============================= -->
+
+        <section class="login-intro">
+
+            <div class="library-logo">
+                📚
+            </div>
+
+            <h1>
+                Quản lý thư viện
+            </h1>
+
+            <p>
+                Hệ thống quản lý sách, người mượn
+                và phiếu mượn trả.
+            </p>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- FORM ĐĂNG NHẬP -->
+        <!-- ============================= -->
+
+        <section class="login-box">
+
+            <div class="login-header">
+
+                <h2>
+                    Đăng nhập
+                </h2>
+
+                <p>
+                    Đăng nhập để tiếp tục
+                </p>
+
+            </div>
+
+
+            <form id="loginForm">
+
+                <!-- TÊN ĐĂNG NHẬP -->
+
+                <div class="form-group">
+
+                    <label for="loginUsername">
+                        Tên đăng nhập
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginUsername"
+                        name="username"
+                        placeholder="Nhập tên đăng nhập"
+                        autocomplete="username"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MẬT KHẨU -->
+
+                <div class="form-group">
+
+                    <label for="loginPassword">
+                        Mật khẩu
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        name="password"
+                        placeholder="Nhập mật khẩu"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- GHI NHỚ -->
+
+                <div class="login-options">
+
+                    <label class="remember-me">
+
+                        <input
+                            type="checkbox"
+                            id="rememberLogin"
+                        >
+
+                        <span>
+                            Ghi nhớ đăng nhập
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+                <!-- THÔNG BÁO LỖI -->
+
+                <div
+                    id="loginMessage"
+                    class="login-message"
+                ></div>
+
+
+                <!-- NÚT ĐĂNG NHẬP -->
+
+                <button
+                    type="submit"
+                    id="loginBtn"
+                    class="login-btn"
+                >
+                    Đăng nhập
+                </button>
+
+            </form>
+
+
+            <div class="login-footer">
+
+                <p>
+                    Hệ thống quản lý thư viện
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+   <script src="script_login.js"></script>
+
+</body>
+
+</html>
+

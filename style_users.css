@@ -1,0 +1,1263 @@
+/* =========================================================
+   USERS PAGE
+========================================================= */
+
+
+/* =========================================================
+   USERS TABLE
+========================================================= */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.users-panel {
+    width: 100%;
+}
+
+.users-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.users-table {
+    width: 100%;
+    min-width: 900px;
+    border-collapse: collapse;
+}
+
+
+/* Người dùng */
+
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+    width: 23%;
+    min-width: 210px;
+}
+
+
+/* Email */
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+    width: 22%;
+    min-width: 190px;
+}
+
+
+/* Vai trò */
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+    width: 13%;
+    min-width: 110px;
+}
+
+
+/* Trạng thái */
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+    width: 15%;
+    min-width: 120px;
+}
+
+
+/* Ngày tạo */
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+    width: 13%;
+    min-width: 110px;
+}
+
+
+/* Thao tác */
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+    width: 14%;
+    min-width: 150px;
+}
+
+
+/* =========================================================
+   USER INFORMATION IN TABLE
+========================================================= */
+
+.users-table .borrower {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.users-table .borrower > div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.users-table .borrower strong {
+    font-size: 13px;
+    font-weight: 700;
+    color: #263238;
+}
+
+.users-table .borrower span {
+    font-size: 11px;
+    color: #8a9aa8;
+}
+
+
+/* Avatar */
+
+.users-table .small-avatar {
+    width: 36px;
+    height: 36px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eaf0f6;
+    color: #54749b;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   USER ROLE
+========================================================= */
+
+.user-role {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.user-role.admin {
+    color: #7653a6;
+}
+
+.user-role.librarian {
+    color: #39739f;
+}
+
+
+/* =========================================================
+   USER STATUS
+========================================================= */
+
+.user-status {
+    display: inline-block;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+.user-status.active {
+    color: #287653;
+}
+
+.user-status.inactive {
+    color: #b55454;
+}
+
+
+/* =========================================================
+   USER ACTIONS
+========================================================= */
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+
+/* Chi tiết */
+
+.user-detail-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #eef4f8;
+    color: #4f7296;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-detail-btn:hover {
+    background: #dfeaf2;
+    transform: translateY(-1px);
+}
+
+
+/* Sửa */
+
+.user-edit-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #f2ecf8;
+    color: #77599b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-edit-btn:hover {
+    background: #e6daf0;
+    transform: translateY(-1px);
+}
+
+
+/* Khóa */
+
+.user-lock-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #fdeaea;
+    color: #d9534f;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-lock-btn:hover {
+    background: #f9d5d2;
+    transform: translateY(-1px);
+}
+
+
+/* Mở khóa */
+
+.user-unlock-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #e2f2eb;
+    color: #4b806b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.user-unlock-btn:hover {
+    background: #d1e9df;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   USER FILTER SEARCH
+========================================================= */
+
+.filter-search {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.filter-search .input {
+    padding-left: 36px;
+}
+
+.filter-search-icon {
+    position: absolute;
+    left: 13px;
+
+    color: #8a9aa8;
+
+    font-size: 17px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   USER MODAL
+========================================================= */
+
+.user-modal {
+    width: min(760px, calc(100% - 32px));
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+    margin-bottom: 26px;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+.form-section h3 {
+    margin-bottom: 17px;
+
+    color: #34495e;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px 20px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: #526574;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #d9534f;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    min-height: 40px;
+
+    padding: 9px 12px;
+
+    border: 1px solid #dce4ea;
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    color: #334e60;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #91aec7;
+
+    box-shadow:
+        0 0 0 3px rgba(84, 116, 150, 0.08);
+}
+
+.form-group input::placeholder {
+    color: #a7b2bb;
+}
+
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+.form-message {
+    margin-top: 14px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.detail-section {
+    margin-bottom: 26px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section h3 {
+    margin-bottom: 17px;
+
+    color: #34495e;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border: 1px solid #e4e9ee;
+    border-radius: 8px;
+
+    background: #e4e9ee;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    min-height: 68px;
+
+    padding: 12px 14px;
+
+    background: #ffffff;
+}
+
+.detail-label {
+    color: #8998a5;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.detail-value {
+    color: #34495e;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.password-hidden {
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   DETAIL USER ROLE / STATUS
+========================================================= */
+
+#detailUserRole {
+    font-weight: 800;
+}
+
+#detailUserStatus {
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CHANGE PASSWORD
+========================================================= */
+
+.detail-password-action {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: 14px;
+}
+
+.change-password-btn {
+    padding: 8px 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #f2ecf8;
+    color: #77599b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.change-password-btn:hover {
+    background: #e6daf0;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   PASSWORD MODAL
+========================================================= */
+
+.password-modal {
+    width: min(480px, calc(100% - 32px));
+}
+
+
+/* =========================================================
+   EMPTY / LOADING / ERROR
+========================================================= */
+
+.users-table .empty-state,
+.users-table .loading-state,
+.users-table .error-state {
+    padding: 45px 20px;
+
+    text-align: center;
+
+    color: #8998a5;
+
+    font-size: 13px;
+}
+
+.users-table .error-state {
+    color: #c25555;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filter-search,
+    .filter-search .input,
+    .filters .select {
+        width: 100%;
+    }
+
+    .toolbar .btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .user-modal {
+        width: calc(100% - 20px);
+    }
+
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+
+    .modal-footer button {
+        width: 100%;
+    }
+
+}
+.user-status-btn {
+    padding: 7px 12px;
+    
+    outline: none;
+    border-radius: 7px;
+
+    
+    
+
+    font-size: 12px;
+    font-weight: 800;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+
+
+
+/* =========================================================
+   TABLE COLUMN WIDTH : ĐỘ RỘNG CÁC CỘT
+========================================================= */
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+    width: 220px;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+    width: 250px;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+    width: 160px;
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+    width: 120px;
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+    width: 120px;
+}
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+    width: 200px;
+}
+
+.users-table th {
+    font-size: 10px;
+    font-weight: 700;
+    font-family: Arial, sans-serif;
+    color: #5a5959;
+}
+
+.user-status-btn {
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.user-status-btn.active {
+    color: #37a037;
+}
+
+.user-status-btn.inactive {
+    color: #d9534f;
+}
+
+/* =========================================================
+   USER MODAL - GIAO DIỆN CHUNG
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    background: rgba(30, 40, 50, 0.45);
+
+    z-index: 1000;
+}
+
+.modal.show {
+    display: flex;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.modal-content {
+    position: relative;
+
+    width: min(760px, 100%);
+    max-height: calc(100vh - 48px);
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 20px 24px 18px;
+
+    border-bottom: 1px solid #e8edf1;
+
+    background: #ffffff;
+}
+
+.modal-header h2 {
+    margin: 0 0 5px;
+
+    color: #34495e;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.modal-header p {
+    margin: 0;
+
+    color: #8998a5;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-modal-btn {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #8998a5;
+
+    font-size: 23px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.close-modal-btn:hover {
+    background: #f1f4f6;
+    color: #34495e;
+}
+
+
+/* =========================================================
+   MODAL BODY
+========================================================= */
+
+.modal-body {
+    padding: 22px 24px;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.form-section {
+    margin-bottom: 24px;
+}
+
+.form-section:last-child {
+    margin-bottom: 0;
+}
+
+.form-section h3 {
+    margin: 0 0 14px;
+
+    color: #34495e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px 20px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.form-group label {
+    color: #526574;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-group label span {
+    color: #d9534f;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 40px;
+
+    padding: 8px 11px;
+
+    border: 1px solid #dce4ea;
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #334e60;
+
+    font-family: inherit;
+    font-size: 13px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #91aec7;
+
+    box-shadow:
+        0 0 0 3px rgba(84, 116, 150, 0.08);
+}
+
+.form-group input::placeholder {
+    color: #a7b2bb;
+}
+
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+.form-message {
+    margin-top: 14px;
+
+    color: #d9534f;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.form-message:empty {
+    display: none;
+}
+
+
+/* =========================================================
+   DETAIL SECTION
+========================================================= */
+
+.detail-section {
+    margin-bottom: 24px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section h3 {
+    margin: 0 0 14px;
+
+    color: #34495e;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8ed;
+    border-radius: 7px;
+
+    background: #e2e8ed;
+}
+
+
+/* =========================================================
+   DETAIL ITEM
+========================================================= */
+
+.detail-item {
+    min-height: 68px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 5px;
+
+    padding: 11px 13px;
+
+    background: #ffffff;
+}
+
+.detail-label {
+    color: #8998a5;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.detail-value {
+    color: #34495e;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+.password-hidden {
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   DETAIL ROLE / STATUS
+========================================================= */
+
+#detailUserRole,
+#detailUserStatus {
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CHANGE PASSWORD BUTTON
+========================================================= */
+
+.detail-password-action {
+    display: flex;
+    justify-content: flex-start;
+
+    margin-top: 13px;
+}
+
+.change-password-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 6px;
+
+    background: #f2ecf8;
+    color: #77599b;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.change-password-btn:hover {
+    background: #e6daf0;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    padding: 14px 24px;
+
+    border-top: 1px solid #e8edf1;
+
+    background: #fafbfc;
+}
+
+
+/* =========================================================
+   FOOTER BUTTON
+========================================================= */
+
+.modal-footer button {
+    min-width: 90px;
+    height: 36px;
+
+    padding: 7px 14px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Hủy / Đóng */
+
+.cancel-btn {
+    border: 1px solid #dce4ea;
+
+    background: #ffffff;
+    color: #60717f;
+}
+
+.cancel-btn:hover {
+    background: #f1f4f6;
+}
+
+
+/* Lưu */
+
+.save-btn {
+    border: none;
+
+    background: #54749b;
+    color: #ffffff;
+}
+
+.save-btn:hover {
+    background: #456583;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CHANGE PASSWORD MODAL
+========================================================= */
+
+.password-modal {
+    width: min(460px, 100%);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .modal {
+        padding: 16px;
+    }
+
+    .modal-content {
+        max-height: calc(100vh - 32px);
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .modal {
+        padding: 10px;
+    }
+
+    .modal-content {
+        max-height: calc(100vh - 20px);
+    }
+
+    .modal-header {
+        padding: 16px;
+    }
+
+    .modal-header h2 {
+        font-size: 16px;
+    }
+
+    .modal-body {
+        padding: 18px 16px;
+    }
+
+    .modal-footer {
+        padding: 12px 16px;
+
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .modal-footer button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,2891 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #F5F7FA;
+    color: #263238;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 25px 16px;
+
+    background: #243447;
+    color: #F4F7FA;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0 10px 30px;
+
+    border-bottom: 1px solid #3A4B5C;
+}
+
+.logo-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: #DCEBFF;
+    color: #243447;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.logo h2 {
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9AA9B8;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu {
+    margin-top: 25px;
+}
+
+.menu-title {
+    margin: 20px 11px 8px;
+
+    color: #8FA0B2;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 13px;
+    margin-bottom: 4px;
+
+    border-radius: 7px;
+
+    color: #B8C4D0;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+.menu-item:hover {
+    background: #30465B;
+    color: #EEF3F7;
+}
+
+.menu-item.active {
+    background: #D9ECFF;
+    color: #243447;
+}
+
+.menu-icon {
+    width: 20px;
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 18px 8px 15px;
+
+    border-top: 1px solid #3A4B5C;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #D6E8F7;
+    color: #263238;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+.user-info strong {
+    font-size: 12px;
+}
+
+.user-info span {
+    margin-top: 3px;
+
+    color: #8EA0B2;
+
+    font-size: 10px;
+}
+
+.more {
+    color: #91A2B3;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px;
+
+    color: #A0AFBD;
+
+    font-size: 12px;
+}
+
+.logout:hover {
+    color: #D8E1E8;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main {
+    width: calc(100% - 250px);
+
+    margin-left: 250px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 35px;
+
+    background: #FFFFFF;
+
+    border-bottom: 1px solid #E3EAF0;
+}
+
+.header h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.header p {
+    margin-top: 5px;
+
+    color: #718294;
+
+    font-size: 12px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* =========================================================
+   HEADER SEARCH
+========================================================= */
+
+.search {
+    width: 220px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 12px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D7E0E8;
+    border-radius: 7px;
+}
+
+.search span {
+    color: #8193A5;
+
+    font-size: 21px;
+}
+
+.search input {
+    width: 100%;
+
+    margin-left: 8px;
+
+    border: none;
+    outline: none;
+
+    color: #333;
+
+    font-size: 12px;
+}
+
+.search input::placeholder {
+    color: #AAB7C4;
+}
+
+
+/* =========================================================
+   NOTIFICATION
+========================================================= */
+
+.notification {
+    width: 35px;
+    height: 35px;
+
+    position: relative;
+
+    border: none;
+    background: transparent;
+
+    color: #526579;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+
+.notification-dot {
+    width: 6px;
+    height: 6px;
+
+    position: absolute;
+    top: 6px;
+    right: 5px;
+
+    border-radius: 50%;
+
+    background: #FF8A65;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding-left: 15px;
+
+    border-left: 1px solid #DCE4EB;
+}
+
+.profile .avatar {
+    width: 34px;
+    height: 34px;
+}
+
+.profile strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.profile span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8B9BAB;
+
+    font-size: 10px;
+}
+
+.profile .arrow {
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.content {
+    padding: 28px 35px 40px;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title {
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    color: #263238;
+
+    font-size: 18px;
+    font-weight: 650;
+}
+
+.page-title p {
+    margin-top: 5px;
+
+    color: #7B8996;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 17px;
+
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    min-height: 145px;
+
+    padding: 20px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E1E8EF;
+    border-radius: 9px;
+}
+
+.stat-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stat-title {
+    color: #718294;
+
+    font-size: 12px;
+}
+
+.stat-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: #EAF2F8;
+    color: #587086;
+
+    font-size: 14px;
+}
+
+.stat-icon.warning {
+    background: #FFF0E8;
+    color: #D97757;
+}
+
+.stat-number {
+    margin-top: 16px;
+
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.stat-footer {
+    margin-top: 7px;
+
+    color: #99938C;
+
+    font-size: 10px;
+}
+
+.increase {
+    color: #3F8F72;
+    font-weight: 600;
+}
+
+.normal {
+    color: #647789;
+    font-weight: 600;
+}
+
+.danger {
+    color: #D9684B;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   KPI
+========================================================= */
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+
+    margin-bottom: 18px;
+}
+
+.kpi {
+    padding: 20px;
+}
+
+.kpi > span {
+    color: #7B8996;
+
+    font-size: 11px;
+}
+
+.kpi strong {
+    display: block;
+
+    margin-top: 10px;
+
+    color: #263238;
+
+    font-size: 27px;
+}
+
+
+/* =========================================================
+   MIDDLE GRID
+========================================================= */
+
+.middle-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    width: 100%;
+
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+.middle-grid > .panel {
+    width: 100%;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.panel {
+    background: #FFFFFF;
+
+    border: 1px solid #E1E8EF;
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 20px 22px;
+
+    border-bottom: 1px solid #E7EDF2;
+}
+
+.panel-header h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.panel-header p {
+    margin-top: 5px;
+
+    color: #99938C;
+
+    font-size: 10px;
+}
+
+.panel-header a {
+    color: #4E78A6;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.panel-header a:hover {
+    text-decoration: underline;
+}
+
+.panel-header select {
+    padding: 7px 10px;
+
+    outline: none;
+
+    border: 1px solid #D7E0E8;
+    border-radius: 5px;
+
+    background: #FFFFFF;
+
+    color: #526579;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CHART
+========================================================= */
+
+.chart {
+    height: 275px;
+
+    display: flex;
+
+    padding: 20px 25px 18px;
+}
+
+.y-axis {
+    width: 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding-bottom: 24px;
+}
+
+.y-axis span {
+    color: #4480B8;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.chart-area {
+    position: relative;
+
+    flex: 1;
+
+    border-bottom: 1px solid #D5DEE7;
+}
+
+.grid-line {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    border-top: 1px dashed #E8EEF3;
+}
+
+.line-1 {
+    top: 0;
+}
+
+.line-2 {
+    top: 33%;
+}
+
+.line-3 {
+    top: 66%;
+}
+
+.line-4 {
+    bottom: 0;
+}
+
+
+/* =========================================================
+   CHART BARS
+========================================================= */
+
+.bars {
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+
+    padding: 0 10px;
+}
+
+.bar-column {
+    width: 45px;
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 27px;
+
+    position: relative;
+    z-index: 2;
+
+    border-radius: 4px 4px 0 0;
+
+    background: #6639E2;
+}
+
+.bar-column.current .bar {
+    background: #5B8DB8;
+}
+
+.bar-column span {
+    position: absolute;
+    bottom: -22px;
+
+    color: #99938C;
+
+    font-size: 9px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   OVERDUE LIST
+========================================================= */
+
+.overdue-list {
+    width: 100%;
+}
+
+.overdue-header {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        50px
+        17%
+        25%
+        25%
+        1fr
+        70px;
+
+    align-items: center;
+
+    column-gap: 20px;
+
+    padding: 14px 20px;
+
+    background: #243447;
+
+    border-bottom: 1px solid #F0DDD2;
+}
+
+.overdue-header > div {
+    color: #EBEBEB;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.overdue-header > div:last-child {
+    text-align: center;
+}
+
+.overdue-item {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        50px
+        12%
+        30%
+        22%
+        1fr
+        70px;
+
+    align-items: center;
+
+    column-gap: 20px;
+
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #EEE7E2;
+
+    transition: background 0.2s ease;
+}
+
+.overdue-item:last-child {
+    border-bottom: none;
+}
+
+.overdue-item:hover {
+    background: #FFF9F5;
+}
+
+.book-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background: #FFF0E5;
+    color: #E4864F;
+
+    font-size: 17px;
+}
+
+.overdue-code {
+    color: #4F7296;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.overdue-book {
+    overflow: hidden;
+
+    color: #403936;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.overdue-borrower {
+    overflow: hidden;
+
+    color: #625A56;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.overdue-date {
+    justify-self: start;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 12px;
+
+    background: #FFE7E3;
+
+    border: 1px solid #FFD0CA;
+    border-radius: 8px;
+
+    color: #D9534F;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.overdue-quantity {
+    width: 36px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #FFF0D8;
+
+    border: 1px solid #FFE0AD;
+
+    color: #C47A20;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.overdue-empty {
+    width: 100%;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #99918C;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RECENT TABLE / COMMON TABLE
+========================================================= */
+
+.recent-panel {
+    overflow: hidden;
+}
+
+.table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+thead {
+    background: #FAFBFC;
+}
+
+th {
+    padding: 13px 15px;
+
+    background: #FAFBFC;
+
+    border-bottom: 1px solid #E8EDF1;
+
+    color: #7B8996;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.35px;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+td {
+    padding: 14px 15px;
+
+    border-bottom: 1px solid #EEF2F5;
+
+    color: #465563;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: #FFF9F5;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td strong {
+    color: #304252;
+}
+
+
+/* =========================================================
+   BORROWER DISPLAY
+========================================================= */
+
+.borrower {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.borrower > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+}
+
+.borrower strong {
+    color: #34424E;
+
+    font-size: 12px;
+}
+
+.borrower span {
+    color: #98A3AD;
+
+    font-size: 10px;
+}
+
+.small-avatar {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 34px;
+
+    border-radius: 50%;
+
+    background: #FFF0E7;
+    color: #D9652D;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status {
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+.status.borrowing {
+    background: #E8F0F6;
+    color: #526B7F;
+}
+
+.status.overdue {
+    background: #FFE8DF;
+    color: #C85F43;
+}
+
+.status.returned {
+    background: #E2F2EB;
+    color: #4B806B;
+}
+
+.status.cancelled {
+    background: #F2F3F5;
+    color: #727B83;
+}
+
+.status.available {
+    background: #E2F2EB;
+    color: #4B806B;
+}
+
+.status.unavailable {
+    background: #F2F3F5;
+    color: #727B83;
+}
+
+
+/* =========================================================
+   COMMON ACTION BUTTON
+========================================================= */
+
+.table-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+}
+
+
+/* =========================================================
+   DETAIL BUTTON
+   Giữ đúng kiểu cũ của bạn
+========================================================= */
+
+.detail-btn,
+.detail-button,
+.borrowing-detail-btn,
+.borrower-detail-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #EEF4F8;
+    color: #4F7296;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.detail-btn:hover,
+.detail-button:hover,
+.borrowing-detail-btn:hover,
+.borrower-detail-btn:hover {
+    background: #DFEAF2;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   DELETE / CANCEL BUTTON
+========================================================= */
+
+.delete-btn,
+.delete-button,
+.borrowing-cancel-btn,
+.borrower-delete-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #FDEAEA;
+    color: #D9534F;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.delete-btn:hover,
+.delete-button:hover,
+.borrowing-cancel-btn:hover,
+.borrower-delete-btn:hover {
+    background: #F9D5D2;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RETURN BUTTON
+========================================================= */
+
+.borrowing-return-btn,
+.edit-btn {
+    padding: 7px 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #E2F2EB;
+    color: #4B806B;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.borrowing-return-btn:hover,
+.edit-btn:hover {
+    background: #D1E9DF;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ACTION ICON
+========================================================= */
+
+.action-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #718294;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   SHARED BUTTON
+========================================================= */
+
+.btn {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #FF8A4C;
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 14px rgba(255, 138, 76, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #F27635;
+
+    transform: translateY(-1px);
+}
+
+.btn.light {
+    background: #FFF3EC;
+    color: #D9652D;
+
+    box-shadow: none;
+}
+
+.btn.light:hover {
+    background: #FFE6D7;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex: 1;
+
+    flex-wrap: wrap;
+}
+
+.input,
+.select {
+    height: 40px;
+
+    outline: none;
+
+    border: 1px solid #DCE4EB;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    color: #354454;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.input {
+    min-width: 230px;
+
+    padding: 0 13px;
+}
+
+.select {
+    min-width: 155px;
+
+    padding: 0 34px 0 12px;
+}
+
+.input:focus,
+.select:focus {
+    border-color: #FF9A62;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 138, 76, 0.12);
+}
+
+
+/* =========================================================
+   TABLE EMPTY / LOADING / ERROR
+========================================================= */
+
+.empty-state,
+.loading-state,
+.error-state,
+.empty-table {
+    padding: 35px 20px !important;
+
+    text-align: center;
+
+    color: #8996A1;
+
+    font-size: 12px;
+}
+
+.error-state {
+    background: #FFF8F5;
+
+    color: #C85F43;
+}
+
+.error-state small,
+.loading-state small {
+    color: #9AA6B0;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+.tabs {
+    display: flex;
+
+    gap: 5px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #E6ECF0;
+}
+
+.tab {
+    padding: 10px 14px;
+
+    border-bottom: 2px solid transparent;
+
+    color: #7A8792;
+
+    font-size: 11px;
+}
+
+.tab:hover {
+    color: #D9652D;
+}
+
+.tab.active {
+    border-bottom-color: #FF8A4C;
+
+    color: #D9652D;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   BOOK MODAL
+========================================================= */
+
+.book-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.book-modal.show {
+    display: flex;
+}
+
+.book-modal-content {
+    width: 600px;
+    max-width: 100%;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 24px;
+
+    background: #FFFFFF;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.book-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #EEE7E2;
+}
+
+.book-modal-header h2 {
+    margin-bottom: 5px;
+
+    color: #403936;
+
+    font-size: 20px;
+}
+
+.book-modal-header p {
+    color: #99918C;
+
+    font-size: 13px;
+}
+
+.close-modal {
+    border: none;
+
+    background: transparent;
+
+    color: #888;
+
+    font-size: 28px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+
+/* =========================================================
+   BOOK FORM
+========================================================= */
+
+#bookForm {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.form-group label {
+    color: #5F5752;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    outline: none;
+
+    border: 1px solid #DDD5CF;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #5B8DB8;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 141, 184, 0.1);
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+.form-group:nth-last-of-type(1) {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   BOOK MODAL ACTIONS
+========================================================= */
+
+.book-modal-actions {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 8px;
+    padding-top: 16px;
+
+    border-top: 1px solid #EEE7E2;
+}
+
+.btn-cancel,
+.btn-save {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #F1EEEB;
+    color: #5F5752;
+}
+
+.btn-save {
+    background: #5B8DB8;
+    color: #FFFFFF;
+}
+
+.btn-cancel:hover {
+    background: #E7E2DE;
+}
+
+.btn-save:hover {
+    background: #4D7FA9;
+}
+
+
+/* =========================================================
+   BORROWER MODAL
+========================================================= */
+
+.borrower-modal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1000;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 24px;
+
+    overflow-y: auto;
+
+    background: rgba(15, 23, 42, 0.55);
+}
+
+.borrower-modal.show {
+    display: flex;
+}
+
+.borrower-modal-content {
+    width: 100%;
+    max-width: 1050px;
+    max-height: calc(100vh - 48px);
+
+    overflow-y: auto;
+
+    padding: 28px;
+
+    background: #FFFFFF;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.2);
+}
+
+.borrower-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.borrower-modal-header h2 {
+    margin-bottom: 6px;
+
+    color: #172033;
+
+    font-size: 24px;
+}
+
+.borrower-modal-header p {
+    color: #64748B;
+
+    font-size: 14px;
+}
+
+.modal-close {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #F1F5F9;
+    color: #475569;
+
+    font-size: 26px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #E2E8F0;
+}
+
+
+/* =========================================================
+   BORROWER SECTION
+========================================================= */
+
+.borrower-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin: 24px 0 18px;
+}
+
+.borrower-section-title h3 {
+    color: #1E293B;
+
+    font-size: 18px;
+}
+
+.borrower-section-title span {
+    color: #64748B;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BORROWER FORM
+========================================================= */
+
+.borrower-form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.borrower-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.borrower-field-full {
+    grid-column: 1 / -1;
+}
+
+.borrower-field label {
+    color: #475569;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.borrower-field input,
+.borrower-field select,
+.borrower-field textarea {
+    width: 100%;
+    min-height: 42px;
+
+    padding: 10px 12px;
+
+    outline: none;
+
+    border: 1px solid #DBE2EA;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    color: #1E293B;
+
+    font: inherit;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.borrower-field textarea {
+    resize: vertical;
+}
+
+.borrower-field input:focus,
+.borrower-field select:focus,
+.borrower-field textarea:focus {
+    border-color: #3B82F6;
+
+    box-shadow:
+        0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.borrower-field input:disabled,
+.borrower-field select:disabled,
+.borrower-field textarea:disabled {
+    background: #F8FAFC;
+
+    color: #475569;
+
+    cursor: default;
+
+    opacity: 1;
+}
+
+.borrower-field input[readonly] {
+    background: #F1F5F9;
+
+    color: #64748B;
+}
+
+
+/* =========================================================
+   BORROWER FORM BUTTONS
+========================================================= */
+
+.borrower-form-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.borrower-btn {
+    padding: 10px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.borrower-btn-primary {
+    background: #2563EB;
+    color: #FFFFFF;
+}
+
+.borrower-btn-primary:hover {
+    background: #1D4ED8;
+}
+
+.borrower-btn-success {
+    background: #16A34A;
+    color: #FFFFFF;
+}
+
+.borrower-btn-success:hover {
+    background: #15803D;
+}
+
+.borrower-btn-secondary {
+    background: #E2E8F0;
+    color: #334155;
+}
+
+.borrower-btn-secondary:hover {
+    background: #CBD5E1;
+}
+
+
+/* =========================================================
+   BORROWER MESSAGE
+========================================================= */
+
+.borrower-message {
+    margin: 10px 0 0;
+
+    font-size: 14px;
+}
+
+.borrower-message.error {
+    color: #DC2626;
+}
+
+.borrower-message.success {
+    color: #15803D;
+}
+
+
+/* =========================================================
+   ADD BORROWER MODAL
+========================================================= */
+
+#addBorrowerModal {
+    display: none;
+}
+
+#addBorrowerModal.show {
+    display: flex;
+}
+
+#addBorrowerModal .borrower-modal-content {
+    width: 700px;
+    max-width: 90%;
+}
+
+#addBorrowerModal input,
+#addBorrowerModal select,
+#addBorrowerModal textarea {
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+#addBorrowerFormMessage {
+    margin-top: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BORROWING TABLE
+========================================================= */
+
+.borrowing-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+.borrowing-table {
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+
+    table-layout: auto;
+}
+
+.borrowing-table th {
+    padding: 13px 15px;
+
+    background: #FAFBFC;
+
+    border-bottom: 1px solid #E8EDF1;
+
+    color: #7B8996;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.35px;
+
+    text-align: left;
+
+    white-space: nowrap;
+}
+
+.borrowing-table td {
+    padding: 14px 15px;
+
+    border-bottom: 1px solid #EEF2F5;
+
+    color: #465563;
+
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.borrowing-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.borrowing-table tbody tr:hover {
+    background: #FFF9F5;
+}
+
+.borrowing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   BORROWING TABLE COLUMNS
+========================================================= */
+
+.borrowing-table th:nth-child(1),
+.borrowing-table td:nth-child(1) {
+    width: 105px;
+}
+
+.borrowing-table th:nth-child(2),
+.borrowing-table td:nth-child(2) {
+    min-width: 150px;
+}
+
+.borrowing-table th:nth-child(3),
+.borrowing-table td:nth-child(3) {
+    min-width: 230px;
+}
+
+.borrowing-table th:nth-child(4),
+.borrowing-table td:nth-child(4),
+.borrowing-table th:nth-child(5),
+.borrowing-table td:nth-child(5),
+.borrowing-table th:nth-child(6),
+.borrowing-table td:nth-child(6) {
+    min-width: 105px;
+
+    white-space: nowrap;
+}
+
+.borrowing-table th:nth-child(7),
+.borrowing-table td:nth-child(7) {
+    min-width: 110px;
+
+    white-space: nowrap;
+}
+
+.borrowing-table th:nth-child(8),
+.borrowing-table td:nth-child(8) {
+    min-width: 220px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BORROWING TABLE TEXT
+========================================================= */
+
+.borrowing-table td:nth-child(1) {
+    color: #4F7296;
+
+    font-weight: 600;
+}
+
+.borrowing-table td:nth-child(2) {
+    color: #34424E;
+
+    font-weight: 600;
+}
+
+.borrowing-table td:nth-child(3) {
+    max-width: 350px;
+
+    overflow: hidden;
+
+    color: #465563;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.borrowing-table td:nth-child(4),
+.borrowing-table td:nth-child(5),
+.borrowing-table td:nth-child(6) {
+    color: #647789;
+}
+
+
+/* =========================================================
+   BORROWING DETAIL MODAL
+========================================================= */
+
+#borrowingDetailModal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1100;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    overflow-y: auto;
+}
+
+#borrowingDetailModal.show {
+    display: flex;
+}
+
+.borrowing-detail-modal {
+    width: 850px;
+    max-width: 100%;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 24px;
+
+    background: #FFFFFF;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================================================
+   BORROWING DETAIL HEADER
+========================================================= */
+
+.borrowing-detail-modal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid #E7EDF2;
+}
+
+.borrowing-detail-modal .modal-header h2 {
+    color: #263238;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.close-modal-btn {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #F1F5F9;
+    color: #64748B;
+
+    font-size: 24px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.close-modal-btn:hover {
+    background: #E2E8F0;
+}
+
+
+/* =========================================================
+   BORROWING DETAIL BODY
+========================================================= */
+
+.borrowing-detail-modal .modal-body {
+    padding-top: 20px;
+}
+
+.detail-section {
+    margin-bottom: 25px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.detail-section h3 {
+    margin-bottom: 14px;
+
+    color: #34424E;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   DETAIL GRID
+========================================================= */
+
+.detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px 18px;
+}
+
+.detail-item {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 12px 14px;
+
+    background: #F8FAFC;
+
+    border: 1px solid #E8EDF1;
+    border-radius: 8px;
+}
+
+.detail-label {
+    color: #8996A1;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.3px;
+}
+
+.detail-value {
+    overflow: hidden;
+
+    color: #34424E;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   DETAIL BOOKS TABLE
+========================================================= */
+
+.detail-books-table-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid #E5EAF0;
+    border-radius: 8px;
+}
+
+.detail-books-table {
+    width: 100%;
+
+    min-width: 600px;
+
+    border-collapse: collapse;
+}
+
+.detail-books-table th {
+    padding: 12px 14px;
+
+    background: #FAFBFC;
+
+    border-bottom: 1px solid #E5EAF0;
+
+    color: #7B8996;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-align: left;
+}
+
+.detail-books-table td {
+    padding: 12px 14px;
+
+    border-bottom: 1px solid #EEF2F5;
+
+    color: #465563;
+
+    font-size: 12px;
+}
+
+.detail-books-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.detail-books-table tbody tr:hover {
+    background: #FFF9F5;
+}
+
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 20px;
+    padding-top: 16px;
+
+    border-top: 1px solid #E7EDF2;
+}
+
+.modal-footer .cancel-btn {
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #F1EEEB;
+    color: #5F5752;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.modal-footer .cancel-btn:hover {
+    background: #E7E2DE;
+}
+
+
+/* =========================================================
+   BORROWING ADD MODAL
+========================================================= */
+
+#addBorrowingModal {
+    display: none;
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 1050;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(15, 23, 42, 0.55);
+
+    overflow-y: auto;
+}
+
+#addBorrowingModal.show {
+    display: flex;
+}
+
+#addBorrowingModal .modal-content {
+    width: 900px;
+    max-width: 100%;
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 24px;
+
+    background: #FFFFFF;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.2);
+}
+
+
+/* =========================================================
+   BORROWING ADD FORM
+========================================================= */
+
+#addBorrowingForm {
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+#addBorrowingForm .form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+#addBorrowingForm .form-group label {
+    color: #5F5752;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#addBorrowingForm input,
+#addBorrowingForm select,
+#addBorrowingForm textarea {
+    width: 100%;
+
+    padding: 10px 12px;
+
+    outline: none;
+
+    border: 1px solid #DCE4EB;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+
+    color: #354454;
+
+    font-size: 13px;
+}
+
+#addBorrowingForm input:focus,
+#addBorrowingForm select:focus,
+#addBorrowingForm textarea:focus {
+    border-color: #5B8DB8;
+
+    box-shadow:
+        0 0 0 3px rgba(91, 141, 184, 0.1);
+}
+
+
+/* =========================================================
+   SELECTED BOOKS
+========================================================= */
+
+#borrowingBooksTableBody td {
+    vertical-align: middle;
+}
+
+#borrowingBooksTableBody input {
+    width: 75px;
+
+    padding: 7px 9px;
+
+    border: 1px solid #DCE4EB;
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   ADD BORROWING BUTTONS
+========================================================= */
+
+#addBorrowingBookBtn {
+    align-self: flex-start;
+
+    padding: 8px 13px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #EEF4F8;
+    color: #4F7296;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#addBorrowingBookBtn:hover {
+    background: #DFEAF2;
+}
+
+#cancelAddBorrowingBtn {
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #F1EEEB;
+    color: #5F5752;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#cancelAddBorrowingBtn:hover {
+    background: #E7E2DE;
+}
+
+#saveAddBorrowingBtn {
+    padding: 9px 16px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #5B8DB8;
+    color: #FFFFFF;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+#saveAddBorrowingBtn:hover {
+    background: #4D7FA9;
+}
+
+
+/* =========================================================
+   FORM MESSAGE
+========================================================= */
+
+#addBorrowingFormMessage {
+    margin-top: 10px;
+
+    font-size: 12px;
+}
+
+#addBorrowingFormMessage.error {
+    color: #D9534F;
+}
+
+#addBorrowingFormMessage.success {
+    color: #4B806B;
+}
+
+
+/* =========================================================
+   DANGER ACTION
+========================================================= */
+
+.danger-action {
+    color: #D9684B !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200PX
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .header {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900PX
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main {
+        width: calc(100% - 210px);
+
+        margin-left: 210px;
+    }
+
+    .header {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .content {
+        padding-left: 22px;
+        padding-right: 22px;
+    }
+
+    .header-right .search {
+        display: none;
+    }
+
+    .borrower-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .borrower-field-full {
+        grid-column: auto;
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .overdue-header,
+    .overdue-item {
+        grid-template-columns:
+            40px
+            120px
+            minmax(180px, 1fr)
+            minmax(150px, 1fr)
+            120px
+            60px;
+
+        column-gap: 12px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 800PX
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .middle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 650PX
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .app {
+        display: block;
+    }
+
+    .sidebar {
+        position: static;
+
+        width: 100%;
+        min-height: auto;
+
+        padding: 15px;
+    }
+
+    .logo {
+        padding-bottom: 15px;
+    }
+
+    .menu {
+        display: flex;
+
+        gap: 5px;
+
+        margin-top: 15px;
+
+        overflow-x: auto;
+    }
+
+    .menu-title {
+        display: none;
+    }
+
+    .menu-item {
+        margin-bottom: 0;
+
+        white-space: nowrap;
+    }
+
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .main {
+        width: 100%;
+
+        margin-left: 0;
+    }
+
+    .header {
+        height: auto;
+
+        align-items: flex-start;
+
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    .header-right {
+        gap: 5px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .input,
+    .select {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    #bookForm {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group-full,
+    .form-group:nth-last-of-type(1) {
+        grid-column: auto;
+    }
+
+    .borrower-form-actions,
+    .book-modal-actions {
+        flex-direction: column;
+    }
+
+    .borrower-form-actions button,
+    .book-modal-actions button {
+        width: 100%;
+    }
+
+    .overdue-header {
+        display: none;
+    }
+
+    .overdue-item {
+        grid-template-columns:
+            40px
+            1fr;
+
+        gap: 10px 14px;
+
+        padding: 15px;
+    }
+
+    .overdue-code,
+    .overdue-book,
+    .overdue-borrower,
+    .overdue-date,
+    .overdue-quantity {
+        grid-column: 2;
+    }
+
+    .overdue-date {
+        justify-self: start;
+    }
+
+    .overdue-quantity {
+        justify-self: start;
+    }
+
+    .borrowing-detail-modal {
+        padding: 18px;
+    }
+
+    .borrower-modal-content {
+        padding: 20px;
+    }
+
+    #addBorrowingModal .modal-content {
+        padding: 18px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - 450PX
+========================================================= */
+
+@media (max-width: 450px) {
+
+    .header h1 {
+        font-size: 18px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    .panel-header {
+        padding: 16px;
+    }
+
+    .chart {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .borrowing-detail-modal {
+        padding: 15px;
+    }
+
+    .detail-item {
+        padding: 10px;
+    }
+}
+/* =========================================================
+   BORROWING STATUS
+========================================================= */
+
+.borrowing-status {
+    display: inline-block;
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    font-size: 14px;
+    font-weight: 800 !important;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+
+/* Đang mượn - xanh cobalt */
+
+.status-borrowing {
+    color: #1769aa;
+}
+
+
+/* Đã trả - xanh ngọc đậm */
+
+.status-returned {
+    color: #087f5b;
+}
+
+
+/* Quá hạn - đỏ cam */
+
+.status-overdue {
+    color: #d94801;
+}
+
+
+/* Đã hủy - tím đậm */
+
+.status-cancelled {
+    color: #8e44ad;
+}

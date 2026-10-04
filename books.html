@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Quản lý sách - Library Management</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- ==================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="logo">
+
+                <div class="logo-icon">
+                    L
+                </div>
+
+                <div>
+                    <h2>Library</h2>
+                    <span>Management</span>
+                </div>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="menu">
+
+                <p class="menu-title">
+                    TỔNG QUAN
+                </p>
+
+                <a
+                    href="index.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">▦</span>
+                    Dashboard
+                </a>
+
+                <a
+                    href="books.html"
+                    class="menu-item active"
+                >
+                    <span class="menu-icon">▤</span>
+                    Sách
+                </a>
+
+                <a
+                    href="borrowers.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">♙</span>
+                    Người mượn
+                </a>
+
+                <a
+                    href="borrowings.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">▣</span>
+                    Phiếu mượn / trả
+                </a>
+
+
+                <a
+                    href="users.html"
+                    class="menu-item"
+                >
+                    <span class="menu-icon">♙</span>
+                    Người dùng
+                </a>
+
+              
+
+            </nav>
+
+
+            <!-- Sidebar bottom -->
+            <div class="sidebar-bottom">
+
+                <!-- Current user -->
+                <div class="user-card">
+
+                    <div class="avatar">
+                        A
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <span>
+                            Quản trị viên
+                        </span>
+
+                    </div>
+
+                    <span class="more">
+                        ⋮
+                    </span>
+
+                </div>
+
+
+                <!-- Logout -->
+                <a
+                    href="#"
+                    class="logout"
+                >
+                    ↪ Đăng xuất
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==================================================
+             MAIN
+        ================================================== -->
+
+        <main class="main">
+
+            <!-- ==================================================
+                 HEADER
+            ================================================== -->
+
+            <header class="header">
+
+                <!-- Page heading -->
+                <div>
+
+                    <h1>
+                        Quản lý sách
+                    </h1>
+
+                    <p>
+                        Hệ thống quản lý thư viện
+                    </p>
+
+                </div>
+
+
+                <!-- Header right -->
+                <div class="header-right">
+
+                  
+
+
+                    <!-- Notification -->
+                    <button class="notification">
+                        ♧
+                    </button>
+
+
+                    <!-- Profile -->
+                    <div class="profile">
+
+                        <div class="avatar">
+                            A
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Admin
+                            </strong>
+
+                            <span>
+                                Quản trị viên
+                            </span>
+
+                        </div>
+
+                        <span>
+                            ⌄
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <section class="content">
+
+                <!-- ==================================================
+                     PAGE TITLE
+                ================================================== -->
+
+                <div class="page-title">
+
+                    <h2>
+                        Danh sách sách
+                    </h2>
+
+                    <p>
+                        Quản lý, tìm kiếm và cập nhật kho sách
+                    </p>
+
+                </div>
+
+
+                <!-- ==================================================
+                     TOOLBAR
+                ================================================== -->
+
+                <div class="toolbar">
+
+                    <!-- Filters -->
+                    <div class="filters">
+
+                        <!-- Search book -->
+                        <input
+                            type="text"
+                            id="bookSearch"
+                            class="input"
+                            placeholder="Tìm tên sách, tác giả..."
+                        >
+
+
+                        <!-- Category filter -->
+                        <select
+                            id="categoryFilter"
+                            class="select"
+                        >
+
+                            <option value="">
+                                Tất cả thể loại
+                            </option>
+
+                        </select>
+
+                        
+
+                    </div>
+
+
+                    <!-- Add book button -->
+                    <button
+                        id="addBookBtn"
+                        class="btn"
+                    >
+                        + Thêm sách
+                    </button>
+
+                </div>
+
+
+                <!-- ==================================================
+                     BOOK TABLE
+                ================================================== -->
+
+                <div class="panel">
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <!-- ==========================
+                                 TABLE HEADER
+                            ========================== -->
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        ID
+                                    </th>
+
+                                    <th>
+                                        TÊN SÁCH
+                                    </th>
+
+                                    <th>
+                                        TÁC GIẢ
+                                    </th>
+
+                                    <th>
+                                        THỂ LOẠI
+                                    </th>
+
+                                    <th>
+                                        SỐ LƯỢNG
+                                    </th>
+
+                                    <th>
+                                        ĐÃ MƯỢN
+                                    </th>
+
+                                    <th>
+                                        NGÔN NGỮ
+                                    </th>
+                                    <th>
+                                        CHI TIẾT
+                                    </th>
+                                    <th>
+                                        XÓA
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <!-- ==========================
+                                 TABLE BODY
+                            ========================== -->
+
+                            <tbody id="booksTableBody">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+<!-- FORM CHI TIẾT SÁCH -->
+
+<div class="book-modal" id="bookModal">
+
+    <div class="book-modal-content">
+
+        <div class="book-modal-header">
+
+            <div>
+                <h2>Chi tiết sách</h2>
+                <p>Chỉnh sửa thông tin sách</p>
+            </div>
+
+            <button
+                type="button"
+                class="close-modal"
+                id="closeBookModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="bookForm">
+
+            <input
+                type="hidden"
+                id="editBookId"
+            >
+
+
+            <div class="form-group">
+
+                <label for="editBookCode">
+                    Mã sách
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookCode"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookTitle">
+                    Tên sách
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookTitle"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookAuthor">
+                    Tác giả
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookAuthor"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookGenre">
+                    Thể loại
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookGenre"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookPublisher">
+                    Nhà xuất bản
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookPublisher"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookYear">
+                    Năm xuất bản
+                </label>
+
+                <input
+                    type="number"
+                    id="editBookYear"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookLanguage">
+                    Ngôn ngữ
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookLanguage"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookPrice">
+                    Giá
+                </label>
+
+                <input
+                    type="number"
+                    id="editBookPrice"
+                    min="0"
+                    step="0.01"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookQuantity">
+                    Số lượng
+                </label>
+
+                <input
+                    type="number"
+                    id="editBookQuantity"
+                    min="0"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookShelf">
+                    Vị trí kệ
+                </label>
+
+                <input
+                    type="text"
+                    id="editBookShelf"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="editBookDescription">
+                    Mô tả
+                </label>
+
+                <textarea
+                    id="editBookDescription"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="book-modal-actions">
+
+                <button
+                    type="button"
+                    class="btn-cancel"
+                    id="cancelBookEdit"
+                >
+                    Hủy
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-save"
+                >
+                    Lưu thay đổi
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+//New form for adding a book
+
+<div class="book-modal" id="addBookModal">
+
+    <div class="book-modal-content">
+
+        <div class="book-modal-header">
+
+            <div>
+                <h2>Thêm sách</h2>
+                <p>Nhập thông tin sách mới</p>
+            </div>
+
+            <button
+                type="button"
+                class="close-modal"
+                id="closeAddBookModal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="addBookForm">
+
+            <div class="form-group">
+
+                <label for="addBookCode">
+                    Mã sách
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookCode"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookTitle">
+                    Tên sách
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookTitle"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookAuthor">
+                    Tác giả
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookAuthor"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookGenre">
+                    Thể loại
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookGenre"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookPublisher">
+                    Nhà xuất bản
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookPublisher"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookYear">
+                    Năm xuất bản
+                </label>
+
+                <input
+                    type="number"
+                    id="addBookYear"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookLanguage">
+                    Ngôn ngữ
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookLanguage"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookPrice">
+                    Giá
+                </label>
+
+                <input
+                    type="number"
+                    id="addBookPrice"
+                    min="0"
+                    step="0.01"
+                    value="0"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookQuantity">
+                    Số lượng
+                </label>
+
+                <input
+                    type="number"
+                    id="addBookQuantity"
+                    min="0"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="addBookShelf">
+                    Vị trí kệ
+                </label>
+
+                <input
+                    type="text"
+                    id="addBookShelf"
+                >
+
+            </div>
+
+
+            <div
+                class="form-group"
+                style="grid-column: 1 / -1;"
+            >
+
+                <label for="addBookDescription">
+                    Mô tả
+                </label>
+
+                <textarea
+                    id="addBookDescription"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="book-modal-actions">
+
+                <button
+                    type="button"
+                    class="btn-cancel"
+                    id="cancelAddBook"
+                >
+                    Hủy
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn-save"
+                >
+                    Thêm sách
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+    <script src="script_books.js"></script>
+    <script src="script_logout.js"></script>
+</body>
+
+</html>

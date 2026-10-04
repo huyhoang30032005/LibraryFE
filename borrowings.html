@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Phiếu mượn / trả - Library Management</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+<div class="app">
+
+```
+<!-- ==================================================
+     SIDEBAR
+================================================== -->
+
+<aside class="sidebar">
+
+    <!-- Logo -->
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            L
+        </div>
+
+        <div>
+            <h2>
+                Library
+            </h2>
+
+            <span>
+                Management
+            </span>
+        </div>
+
+    </div>
+
+
+    <!-- Navigation -->
+
+    <nav class="menu">
+
+        <p class="menu-title">
+            TỔNG QUAN
+        </p>
+
+
+        <a
+            class="menu-item"
+            href="index.html"
+        >
+            <span class="menu-icon">
+                ▦
+            </span>
+
+            Dashboard
+        </a>
+
+
+        <a
+            class="menu-item"
+            href="books.html"
+        >
+            <span class="menu-icon">
+                ▤
+            </span>
+
+            Sách
+        </a>
+
+
+        <a
+            class="menu-item"
+            href="borrowers.html"
+        >
+            <span class="menu-icon">
+                ♙
+            </span>
+
+            Người mượn
+        </a>
+
+
+        <a
+            class="menu-item active"
+            href="borrowings.html"
+        >
+            <span class="menu-icon">
+                ▣
+            </span>
+
+            Phiếu mượn / trả
+        </a>
+
+
+        <a
+            class="menu-item"
+            href="users.html"
+        >
+            <span class="menu-icon">
+                ♙
+            </span>
+
+            Người dùng
+        </a>
+
+
+    </nav>
+
+
+    <!-- Sidebar bottom -->
+
+    <div class="sidebar-bottom">
+
+        <div class="user-card">
+
+            <div class="avatar">
+                A
+            </div>
+
+            <div class="user-info">
+
+                <strong>
+                    Admin
+                </strong>
+
+                <span>
+                    Quản trị viên
+                </span>
+
+            </div>
+
+            <span class="more">
+                &vellip;
+            </span>
+
+        </div>
+
+
+        <a
+            class="logout"
+            href="#"
+        >
+            &rarrhk; Đăng xuất
+        </a>
+
+    </div>
+
+</aside>
+
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<main class="main">
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                Phiếu mượn / trả
+            </h1>
+
+            <p>
+                Hệ thống quản lý thư viện
+            </p>
+
+        </div>
+
+
+        <div class="header-right">
+
+        
+
+
+            <!-- Notification -->
+
+            <button
+                class="notification"
+                type="button"
+            >
+                ♧
+            </button>
+
+
+            <!-- Profile -->
+
+            <div class="profile">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <span>
+                        Quản trị viên
+                    </span>
+
+                </div>
+
+                <span>
+                    ⌄
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         CONTENT
+    ================================================== -->
+
+    <section class="content">
+
+
+        <!-- ==================================================
+             PAGE TITLE
+        ================================================== -->
+
+        <div class="page-title">
+
+            <h2>
+                Phiếu mượn / trả
+            </h2>
+
+            <p>
+                Lập phiếu, theo dõi hạn trả và xác nhận sách đã trả
+            </p>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             TOOLBAR
+        ================================================== -->
+
+        <div class="toolbar">
+
+
+            <!-- Search + Filter -->
+
+            <div class="filters">
+
+                <!-- Search -->
+
+                <input
+                    class="input"
+                    id="borrowingSearch"
+                    type="text"
+                    placeholder="Tìm mã phiếu, người mượn, sách..."
+                >
+
+
+                <!-- Status filter -->
+
+                <select
+                    class="input"
+                    id="borrowingStatusFilter"
+                >
+
+                    <option value="">
+                        Tất cả trạng thái
+                    </option>
+
+                    <option value="borrowing">
+                        Đang mượn
+                    </option>
+
+                    <option value="returned">
+                        Đã trả
+                    </option>
+
+                    <option value="overdue">
+                        Quá hạn
+                    </option>
+
+                    <option value="cancelled">
+                        Đã hủy
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Add borrowing -->
+
+            <button
+                class="btn"
+                id="addBorrowingBtn"
+                type="button"
+            >
+                + Lập phiếu mượn
+            </button>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             BORROWING TABLE
+        ================================================== -->
+
+        <div class="panel">
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                MÃ PHIẾU
+                            </th>
+
+                            <th>
+                                NGƯỜI MƯỢN
+                            </th>
+
+                            <th>
+                                SÁCH
+                            </th>
+
+                            <th>
+                                NGÀY MƯỢN
+                            </th>
+
+                            <th>
+                                HẠN TRẢ
+                            </th>
+
+                            <th>
+                                NGÀY TRẢ
+                            </th>
+
+                            <th>
+                                TRẠNG THÁI
+                            </th>
+
+                            <th>
+                                THAO TÁC
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="borrowingsTableBody">
+
+                        <!--
+                            Dữ liệu sẽ được JavaScript
+                            render vào đây.
+                        -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<!-- ==================================================
+     MODAL: LẬP PHIẾU MƯỢN
+================================================== -->
+
+<div
+    class="borrower-modal"
+    id="addBorrowingModal"
+>
+
+```
+<div class="borrower-modal-content">
+
+
+    <!-- Modal header -->
+
+    <div class="borrower-modal-header">
+
+        <div>
+
+            <h2>
+                Lập phiếu mượn
+            </h2>
+
+            <p>
+                Tạo phiếu mượn sách mới
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="modal-close"
+            id="closeAddBorrowingModal"
+        >
+            &times;
+        </button>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         FORM
+    ================================================== -->
+
+    <form id="addBorrowingForm">
+
+
+        <!-- ==================================================
+             THÔNG TIN PHIẾU
+        ================================================== -->
+
+        <h3 class="borrower-section-title">
+            Thông tin phiếu mượn
+        </h3>
+
+
+        <div class="borrower-form-grid">
+
+
+            <!-- Mã phiếu -->
+
+            <div class="borrower-field">
+
+                <label for="borrowingCode">
+                    Mã phiếu
+                </label>
+
+                <input
+                    type="text"
+                    id="borrowingCode"
+                    placeholder="Nhập mã phiếu"
+                >
+
+            </div>
+
+
+            <!-- Người mượn -->
+
+            <div class="borrower-field">
+
+                <label for="borrowingBorrower">
+                    Người mượn
+                </label>
+
+                <select id="borrowingBorrower">
+
+                    <option value="">
+                        -- Chọn người mượn --
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Ngày mượn -->
+
+            <div class="borrower-field">
+
+                <label for="borrowDate">
+                    Ngày mượn
+                </label>
+
+                <input
+                    type="datetime-local"
+                    id="borrowDate"
+                >
+
+            </div>
+
+
+            <!-- Hạn trả -->
+
+            <div class="borrower-field">
+
+                <label for="dueDate">
+                    Hạn trả
+                </label>
+
+                <input
+                    type="datetime-local"
+                    id="dueDate"
+                >
+
+            </div>
+
+
+            <!-- Ghi chú -->
+
+            <div class="borrower-field borrower-field-full">
+
+                <label for="borrowingNote">
+                    Ghi chú
+                </label>
+
+                <textarea
+                    id="borrowingNote"
+                    rows="3"
+                    placeholder="Nhập ghi chú nếu có..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             THÊM SÁCH
+        ================================================== -->
+
+        <h3 class="borrower-section-title">
+            Sách mượn
+        </h3>
+
+
+        <div class="borrower-form-grid">
+
+
+            <!-- Chọn sách -->
+
+            <div class="borrower-field">
+
+                <label for="borrowingBook">
+                    Sách
+                </label>
+
+                <select id="borrowingBook">
+
+                    <option value="">
+                        -- Chọn sách --
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Số lượng -->
+
+            <div class="borrower-field">
+
+                <label for="borrowingQuantity">
+                    Số lượng
+                </label>
+
+                <input
+                    type="number"
+                    id="borrowingQuantity"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <!-- Thêm sách -->
+
+            <div class="borrower-field">
+
+                <label>
+                    &nbsp;
+                </label>
+
+                <button
+                    type="button"
+                    class="borrower-btn borrower-btn-primary"
+                    id="addBorrowingBookBtn"
+                >
+                    + Thêm sách
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             DANH SÁCH SÁCH ĐÃ CHỌN
+        ================================================== -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            SÁCH
+                        </th>
+
+                        <th>
+                            SỐ LƯỢNG
+                        </th>
+
+                        <th>
+                            THAO TÁC
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="borrowingBooksTableBody">
+
+                    <!--
+                        JavaScript sẽ thêm các sách
+                        được chọn vào đây.
+                    -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             FORM MESSAGE
+        ================================================== -->
+
+        <div
+            id="addBorrowingFormMessage"
+            class="form-message"
+        ></div>
+
+
+
+        <!-- ==================================================
+             BUTTONS
+        ================================================== -->
+
+        <div class="book-modal-actions">
+
+            <button
+                type="button"
+                class="btn-cancel"
+                id="cancelAddBorrowingBtn"
+            >
+                Hủy
+            </button>
+
+
+            <button
+                type="submit"
+                class="btn-save"
+                id="saveAddBorrowingBtn"
+            >
+                Lập phiếu
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+</div>
+<!-- MODAL CHI TIẾT PHIẾU MƯỢN -->
+<div id="borrowingDetailModal" class="modal">
+
+    <div class="modal-content borrowing-detail-modal">
+
+        <div class="modal-header">
+            <h2>Chi tiết phiếu mượn</h2>
+
+            <button
+                type="button"
+                id="closeBorrowingDetailModal"
+                class="close-modal-btn"
+            >
+                &times;
+            </button>
+        </div>
+
+        <div class="modal-body">
+
+            <!-- THÔNG TIN PHIẾU -->
+            <div class="detail-section">
+
+                <h3>Thông tin phiếu</h3>
+
+                <div class="detail-grid">
+
+                    <div class="detail-item">
+                        <span class="detail-label">Mã phiếu</span>
+                        <span id="detailBorrowingCode" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Trạng thái</span>
+                        <span id="detailBorrowingStatus" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Người mượn</span>
+                        <span id="detailBorrowerName" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Mã người mượn</span>
+                        <span id="detailBorrowerCode" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Ngày mượn</span>
+                        <span id="detailBorrowDate" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Hạn trả</span>
+                        <span id="detailDueDate" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Ngày trả</span>
+                        <span id="detailReturnDate" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                    <div class="detail-item">
+                        <span class="detail-label">Ghi chú</span>
+                        <span id="detailBorrowingNote" class="detail-value">
+                            -
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DANH SÁCH SÁCH -->
+            <div class="detail-section">
+
+                <h3>Sách trong phiếu</h3>
+
+                <div class="detail-books-table-wrapper">
+
+                    <table class="detail-books-table">
+
+                        <thead>
+                            <tr>
+                                <th>Mã sách</th>
+                                <th>Tên sách</th>
+                                <th>Số lượng</th>
+                                <th>Đã trả</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="detailBorrowingBooksBody">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="closeBorrowingDetailBtn"
+                class="cancel-btn"
+            >
+                Đóng
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
+<script src="script_borrowings.js"></script>
+<script src="script_logout.js"></script>
+
+</body>
+
+</html>
