@@ -682,12 +682,12 @@ body{
 ========================================================= */
 .users-table th:nth-child(1),
 .users-table td:nth-child(1) {
-    width: 220px;
+    width: 200px;
 }
 
 .users-table th:nth-child(2),
 .users-table td:nth-child(2) {
-    width: 250px;
+    width: 220px;
 }
 
 .users-table th:nth-child(3),
@@ -697,7 +697,7 @@ body{
 
 .users-table th:nth-child(4),
 .users-table td:nth-child(4) {
-    width: 120px;
+    width: 100px;
 }
 
 .users-table th:nth-child(5),
@@ -707,7 +707,7 @@ body{
 
 .users-table th:nth-child(6),
 .users-table td:nth-child(6) {
-    width: 200px;
+    width: 220px;
 }
 
 .users-table th {
