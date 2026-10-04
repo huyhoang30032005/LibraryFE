@@ -1332,17 +1332,14 @@ td strong {
 
 .input,
 .select {
-    height: 40px;
-
+    height: 10px;
+    font-weight: 600;
     outline: none;
-
-    border: 1px solid #DCE4EB;
-    border-radius: 8px;
-
+    font-style:bold;
     background: #FFFFFF;
-    color: #354454;
+    color: #214e7e;
 
-    font-size: 12px;
+    font-size: 14px;
 
     transition:
         border-color 0.2s,
