@@ -1332,18 +1332,30 @@ td strong {
 
 .input,
 .select {
-    height: 10px;
-    font-weight: 600;
-    outline: none;
-    font-style:bold;
-    background: #FFFFFF;
-    color: #214e7e;
+    height: 40px;
 
-    font-size: 14px;
+    outline: none;
+    font-style: bold;
+    border: 1px solid #DCE4EB;
+    border-radius: 8px;
+
+    background: #FFFFFF;
+    color: #0d2d4e;
+
+    font-size: 12px;
 
     transition:
         border-color 0.2s,
         box-shadow 0.2s;
+}
+
+#chartPeriod {
+    border:none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #235183;
+       position: relative;
+    top: 10px;
 }
 
 .input {
