@@ -9,6 +9,7 @@
     <title>Dashboard - Library Management</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -20,7 +21,13 @@
 
             <!-- Logo -->
             <div class="logo">
-                <div class="logo-icon">L</div>
+                <div class="logo-icon">
+                    <iconify-icon
+                        icon="mdi:book-open-page-variant"
+                        width="26"
+                        height="26">
+                    </iconify-icon>
+                </div>
 
                 <div>
                     <h2>Library</h2>
@@ -53,7 +60,6 @@
                     Phiếu mượn / trả
                 </a>
 
-
                 <a class="menu-item" href="users.html">
                     <span class="menu-icon">♙</span>
                     Người dùng
@@ -66,14 +72,20 @@
 
                 <div class="user-card">
 
-                    <div class="avatar">A</div>
-
-                    <div class="user-info">
-                        <strong>Admin</strong>
-                        <span>Quản trị viên</span>
+                    <div class="avatar">
+                        <iconify-icon
+                            icon="mdi:account"
+                            width="24"
+                            height="24">
+                        </iconify-icon>
                     </div>
 
-                    <span class="more">⋮</span>
+                    <div class="user-info">
+                        <strong id="sidebarUserName">Admin</strong>
+                        <span id="sidebarUserRole">Quản trị viên</span>
+                    </div>
+
+                    
 
                 </div>
 
@@ -101,24 +113,24 @@
                 <!-- Header right -->
                 <div class="header-right">
 
-               
-
-                    <!-- Notification -->
-                    <button class="notification">
-                        ♧
-                    </button>
+                
 
                     <!-- Profile -->
                     <div class="profile">
 
-                        <div class="avatar">A</div>
-
-                        <div>
-                            <strong>Admin</strong>
-                            <span>Quản trị viên</span>
+                        <div class="avatar">
+                            <iconify-icon
+                                icon="mdi:account"
+                                width="24"
+                                height="24">
+                            </iconify-icon>
                         </div>
 
-                        <span>⌄</span>
+                        <div>
+                         <strong id="headerUserName">Admin</strong>
+                        <span id="headerUserRole">Quản trị viên</span>
+                        </div>
+
 
                     </div>
 
@@ -260,9 +272,9 @@
                                 </p>
                             </div>
 
-                          <span class="select" id="chartPeriod">
-    6 tháng gần nhất
-</span>
+                            <span class="select" id="chartPeriod">
+                                6 tháng gần nhất
+                            </span>
 
                         </div>
 
@@ -290,12 +302,15 @@
 
                                 <!-- Bars -->
                                 <div class="bars" id="borrowingChart">
-    <div class="bar-column">
-        <div class="bar" style="height: 0%"></div>
-        <span>Đang tải</span>
-    </div>
-</div>
-</div>
+                                    <div class="bar-column">
+                                        <div class="bar" style="height: 0%"></div>
+                                        <span>Đang tải</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -318,15 +333,17 @@
 
 
                         <div class="overdue-list" id="overdueList">
-    <div class="overdue-item">
-        <div class="book-icon">▤</div>
-        <div class="overdue-info">
-            <strong>Đang tải dữ liệu...</strong>
-            <span>Vui lòng chờ</span>
-        </div>
-    </div>
-</div>
-</div>
+
+                            <div class="overdue-item">
+                                <div class="book-icon">▤</div>
+
+                                <div class="overdue-info">
+                                    <strong>Đang tải dữ liệu...</strong>
+                                    <span>Vui lòng chờ</span>
+                                </div>
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -370,10 +387,14 @@
 
 
                             <tbody id="recentBorrowings">
-    <tr>
-        <td colspan="6" style="text-align: center;">Đang tải dữ liệu...</td>
-    </tr>
-</tbody>
+
+                                <tr>
+                                    <td colspan="6" style="text-align: center;">
+                                        Đang tải dữ liệu...
+                                    </td>
+                                </tr>
+
+                            </tbody>
 
                         </table>
 
@@ -388,8 +409,12 @@
     </div>
 
 
-<script src="script.js"></script>
-<script src="script_logout.js"></script>
+    <script src="script.js"></script>
+    <script src="script_logout.js"></script>
+    <script src="permission.js"></script>
+
 </body>
 
 </html>
+
+

@@ -11,6 +11,7 @@
     <title>Quản lý sách - Library Management</title>
 
     <link rel="stylesheet" href="style.css">
+     <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
@@ -94,37 +95,26 @@
             <!-- Sidebar bottom -->
             <div class="sidebar-bottom">
 
-                <!-- Current user -->
                 <div class="user-card">
 
                     <div class="avatar">
-                        A
+                        <iconify-icon
+                            icon="mdi:account"
+                            width="24"
+                            height="24">
+                        </iconify-icon>
                     </div>
 
                     <div class="user-info">
-
-                        <strong>
-                            Admin
-                        </strong>
-
-                        <span>
-                            Quản trị viên
-                        </span>
-
+                        <strong id="sidebarUserName">Admin</strong>
+                        <span id="sidebarUserRole">Quản trị viên</span>
                     </div>
 
-                    <span class="more">
-                        ⋮
-                    </span>
+                    
 
                 </div>
 
-
-                <!-- Logout -->
-                <a
-                    href="#"
-                    class="logout"
-                >
+                <a class="logout" href="#" id="logoutButton">
                     ↪ Đăng xuất
                 </a>
 
@@ -162,37 +152,24 @@
                 <!-- Header right -->
                 <div class="header-right">
 
-                  
-
-
-                    <!-- Notification -->
-                    <button class="notification">
-                        ♧
-                    </button>
-
+                
 
                     <!-- Profile -->
                     <div class="profile">
 
                         <div class="avatar">
-                            A
+                            <iconify-icon
+                                icon="mdi:account"
+                                width="24"
+                                height="24">
+                            </iconify-icon>
                         </div>
 
                         <div>
-
-                            <strong>
-                                Admin
-                            </strong>
-
-                            <span>
-                                Quản trị viên
-                            </span>
-
+                         <strong id="headerUserName">Admin</strong>
+                        <span id="headerUserRole">Quản trị viên</span>
                         </div>
 
-                        <span>
-                            ⌄
-                        </span>
 
                     </div>
 
@@ -781,6 +758,7 @@
 </div>
     <script src="script_books.js"></script>
     <script src="script_logout.js"></script>
+    <script src="permission.js"></script>
 </body>
 
 </html>

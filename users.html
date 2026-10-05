@@ -24,7 +24,7 @@
         rel="stylesheet"
         href="style_users.css"
     >
-
+ <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
 </head>
 
 
@@ -148,47 +148,32 @@
 
 
         <!-- Sidebar bottom -->
+  <div class="sidebar-bottom">
 
-        <div class="sidebar-bottom">
+                <div class="user-card">
 
+                    <div class="avatar">
+                        <iconify-icon
+                            icon="mdi:account"
+                            width="24"
+                            height="24">
+                        </iconify-icon>
+                    </div>
 
-            <!-- Current user -->
+                    <div class="user-info">
+                        <strong id="sidebarUserName">Admin</strong>
+                        <span id="sidebarUserRole">Quản trị viên</span>
+                    </div>
 
-            <div class="user-card">
-
-                <div class="avatar">
-                    A
-                </div>
-
-                <div class="user-info">
-
-                    <strong>
-                        Admin
-                    </strong>
-
-                    <span>
-                        Quản trị viên
-                    </span>
+                    
 
                 </div>
 
-                <span class="more">
-                    ⋮
-                </span>
+                <a class="logout" href="#" id="logoutButton">
+                    ↪ Đăng xuất
+                </a>
 
             </div>
-
-
-            <!-- Logout -->
-
-            <a
-                class="logout"
-                href="#"
-            >
-                ↪ Đăng xuất
-            </a>
-
-        </div>
 
     </aside>
 
@@ -227,47 +212,28 @@
 
             <div class="header-right">
 
+                
 
-           
+                    <!-- Profile -->
+                    <div class="profile">
 
+                        <div class="avatar">
+                            <iconify-icon
+                                icon="mdi:account"
+                                width="24"
+                                height="24">
+                            </iconify-icon>
+                        </div>
 
-                <!-- Notification -->
+                        <div>
+                         <strong id="headerUserName">Admin</strong>
+                        <span id="headerUserRole">Quản trị viên</span>
+                        </div>
 
-                <button
-                    type="button"
-                    class="notification"
-                >
-                    ♧
-                </button>
-
-
-                <!-- Profile -->
-
-                <div class="profile">
-
-                    <div class="avatar">
-                        A
-                    </div>
-
-                    <div>
-
-                        <strong>
-                            Admin
-                        </strong>
-
-                        <span>
-                            Quản trị viên
-                        </span>
 
                     </div>
-
-                    <span>
-                        ⌄
-                    </span>
 
                 </div>
-
-            </div>
 
         </header>
 
@@ -1474,6 +1440,7 @@
 
 <script src="script_users.js"></script>
 <script src="script_logout.js"></script>
+<script src="permission.js"></script>
 </body>
 
 </html>
